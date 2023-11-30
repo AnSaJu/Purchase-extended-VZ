@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+  <record id="purchase_extended_view_tree" model="ir.ui.view">
+      <field name="name">purchase.extended.view.tree</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+      <field name="arch" type="xml">      
+          <xpath expr="//field[@name='user_id']" position="after">
+              <field name="type" optional="show"/>
+              <field name="project_id"/>
+              <field name="code" optional="show"/>
+              <field name="user_partner_id"/>
+          </xpath>      
+      </field>      
+  </record>
+
+
+    <record id="action_view_purchase_extended" model="ir.actions.act_window">
+      <field name="name">Purchase Estended</field>
+      <field name="res_model">purchase.order</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_purchase_extended" parent="" action="purchase_extended.action_view_purchase_extended" />
+</odoo>
