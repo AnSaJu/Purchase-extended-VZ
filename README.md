@@ -1,2 +1,2 @@
 # Purchase-extended-VZ
- Desarrollo modulo en Odoo
+ Desarrollo modulo en Odoo 17
